@@ -1,0 +1,27 @@
+﻿@model IEnumerable<HackerNewsItem>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Top Hacker News stories</h1>
+    <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+            </tr>
+          </thead>
+          <tbody>
+              @foreach (var item in Model)
+              {
+                <tr>
+                  <th scope="row">@item.Number</th>
+                  <td><a href="@item.Url" target="_blank">@item.Title</a></td>
+                </tr>
+              }
+          </tbody>
+        </table>
+    </div>
+</div>
